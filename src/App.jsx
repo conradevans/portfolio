@@ -227,8 +227,11 @@ export default function App() {
             <div><span className="timeline-type">Education</span><h3>University of Florida</h3><p className="timeline-subtitle">B.S. Computer Science · Expected May 2028 · GPA 3.59</p><div className="coursework"><span>Data Structures & Algorithms</span><span>Operating Systems</span><span>Computer Organization</span><span>Introduction to Software Engineering</span><span>Discrete Structures</span></div></div>
           </article>
           <article className="timeline-card">
-            <div className="timeline-date">Aug 2023 — May 2024</div>
-            <div><span className="timeline-type">Experience</span><h3>Tutor</h3><p className="timeline-subtitle">Mathematics · One-on-one instruction</p><p>Tutored students in Calculus, Algebra, and Geometry, developing individualized exercises to reinforce problem-solving skills.</p></div>
+            <div className="timeline-date">Aug 2026 — Present</div>
+            <div><span className="timeline-type">Experience</span><h3>Senior Developer</h3><p className="timeline-subtitle">UF Software Engineering Club · Software Development</p><p>Contribute to technical planning, implementation, and engineering decisions
+      across a collaborative development team. Review code, troubleshoot technical
+      issues, and provide guidance to teammates to help resolve blockers and keep
+      development moving.</p></div>
           </article>
         </div>
       </section>
