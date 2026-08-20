@@ -11,26 +11,31 @@ export function HiberVisual() {
   return <BrowserFrame className="hiber-preview"><div className="sleep-top"><div><span className="sleep-logo">☾</span><strong>HiberGator</strong></div><span className="sleep-avatar">CE</span></div><div className="sleep-grid"><div className="sleep-score"><span>Sleep score</span><strong>86</strong><small>+8 this week</small></div><div className="sleep-chart"><div className="chart-label">7-day consistency</div><div className="bars">{bars.map((h,i)=><span key={i} style={{height:`${h}%`}} />)}</div></div><div className="sleep-note"><span>Tonight</span><strong>11:15 PM</strong><small>Target bedtime</small></div></div></BrowserFrame>
 }
 
-export function WadVisual() {
-  return <div className="terminal-preview"><div className="terminal-bar"><span/><span/><span/><em>wadfs — ~/p3</em></div><pre><span className="prompt">$</span> ./wadfs sample1.wad ./mnt{`\n`}<span className="prompt">$</span> tree ./mnt{`\n`}<span className="tree">./mnt{`\n`}├── E1M0{`\n`}│   ├── THINGS{`\n`}│   ├── LINEDEFS{`\n`}│   └── VERTEXES{`\n`}├── F{`\n`}│   └── F1{`\n`}└── mp.txt</span>{`\n\n`}<span className="success">35 tests passed.</span></pre></div>
-}
+export function MySchedulerVisual() {
+  const shifts = [
+    { name: 'Jordan', role: 'Manager', start: 8, width: 72 },
+    { name: 'Taylor', role: 'Sales', start: 22, width: 58 },
+    { name: 'Morgan', role: 'Support', start: 10, width: 48 },
+  ]
 
-const mineCells = ['','1','','⚑','','1','2','2','1','','','1','✹','2','1','','1','2','2','1','','','','1','']
-export function MinesweeperVisual() {
-  return <div className="mini-app mine-app"><div className="mini-title"><span>Minesweeper</span><span>010</span></div><div className="mine-grid">{mineCells.map((c,i)=><div key={i} className={`mine-cell ${c==='✹'?'bomb':''} ${c==='⚑'?'flag':''}`}>{c}</div>)}</div></div>
-}
-
-const sudoku = [
-  5,3,'','',7,'','','','',
-  6,'','',1,9,5,'','','',
-  '',9,8,'','','','',6,'',
-  8,'','','',6,'','','',3,
-  4,'','',8,'',3,'','',1,
-  7,'','','',2,'','','',6,
-  '',6,'','','','',2,8,'',
-  '','','',4,1,9,'','',5,
-  '','','','',8,'','',7,9
-]
-export function SudokuVisual() {
-  return <div className="mini-app sudoku-app"><div className="mini-title"><span>Sudoku</span><span>Medium</span></div><div className="sudoku-grid">{sudoku.map((n,i)=><div key={i} className={`${(Math.floor(i/9)%3===2 && Math.floor(i/9)!==8)?'thick-bottom ':''}${(i%9===2||i%9===5)?'thick-right':''}`}>{n}</div>)}</div></div>
+  return <BrowserFrame className="scheduler-preview">
+    <div className="scheduler-top">
+      <div><span className="scheduler-mark">M</span><strong>MyScheduler</strong></div>
+      <span className="scheduler-week">Aug 17–23</span>
+    </div>
+    <div className="scheduler-shell">
+      <div className="scheduler-summary">
+        <span>Weekly schedule</span>
+        <strong>24 shifts generated</strong>
+        <small>All requirements covered</small>
+      </div>
+      <div className="scheduler-board">
+        <div className="scheduler-days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div>
+        {shifts.map((shift) => <div className="shift-row" key={shift.name}>
+          <div className="shift-person"><strong>{shift.name}</strong><span>{shift.role}</span></div>
+          <div className="shift-track"><span style={{ marginLeft: `${shift.start}%`, width: `${shift.width}%` }} /></div>
+        </div>)}
+      </div>
+    </div>
+  </BrowserFrame>
 }

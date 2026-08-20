@@ -1,7 +1,7 @@
 import { ArrowUpRight, GithubIcon } from './Icons.jsx'
 
-export default function ProjectCard({ index, title, kicker, description, bullets = [], tech, links = [], visual, featured = true }) {
-  return <article className={`project-card ${featured ? 'featured-project' : 'small-project'}`}>
+export default function ProjectCard({ index, title, kicker, description, bullets = [], tech, links = [], visual }) {
+  return <article className="project-card featured-project">
     <div className="project-visual">{visual}</div>
     <div className="project-copy">
       <div className="project-topline"><span>{String(index).padStart(2,'0')}</span><span>{kicker}</span></div>

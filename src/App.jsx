@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import ProjectCard from './components/ProjectCard.jsx'
-import { GolfVisual, HiberVisual, WadVisual, MinesweeperVisual, SudokuVisual } from './components/ProjectVisuals.jsx'
+import { GolfVisual, HiberVisual, MySchedulerVisual } from './components/ProjectVisuals.jsx'
 import { ArrowUpRight, GithubIcon, LinkedinIcon, MailIcon, MenuIcon, MoonIcon, SunIcon } from './components/Icons.jsx'
 import profilePhoto from './images/profile-photo.jpg'
 
@@ -16,11 +16,25 @@ const featuredProjects = [
     ],
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render'],
     links: [
-      { label: 'Live site', href: 'https://golfmullet-frontend.vercel.app' },
-      { label: 'Frontend', href: 'https://github.com/conradevans/golfmullet-frontend', github: true },
-      { label: 'Backend', href: 'https://github.com/conradevans/golfmullet-backend', github: true },
+      { label: 'Live site', href: 'https://golfmullet-frontend.vercel.app/' },
+      { label: 'GitHub', href: 'https://github.com/conradevans/GolfMullet.git', github: true },
     ],
     visual: <GolfVisual />,
+  },
+  {
+    title: 'MyScheduler',
+    kicker: 'Client · Full-Stack',
+    description: 'A full-stack workforce scheduling application that generates employee shifts from availability, staffing requirements, role qualifications, and weekly hour limits.',
+    bullets: [
+      'Developed a full-stack workforce scheduling application for a client that generates employee shifts based on availability, staffing requirements, role qualifications, and weekly hour limits.',
+      'Engineered constraint-aware scheduling logic to prevent split shifts and scheduling conflicts, preserve role-qualified employees, and balance employee workloads.',
+    ],
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render'],
+    links: [
+      { label: 'Live site', href: 'https://myscheduler-1av7.onrender.com/login' },
+      { label: 'GitHub', href: 'https://github.com/conradevans/MyScheduler.git', github: true },
+    ],
+    visual: <MySchedulerVisual />,
   },
   {
     title: 'HiberGator',
@@ -36,36 +50,6 @@ const featuredProjects = [
       { label: 'GitHub', href: 'https://github.com/OliverG776/HiberGator', github: true },
     ],
     visual: <HiberVisual />,
-  },
-  {
-    title: 'WAD File System',
-    kicker: 'Systems · C++',
-    description: 'A Linux userspace filesystem project that parses WAD archives into a navigable directory structure and exposes them through FUSE.',
-    bullets: [
-      'Built a C++ library to parse WAD headers, descriptors, namespaces, map markers, and file data.',
-      'Implemented path lookup, directory/file creation, reads, writes, and on-disk descriptor updates using POSIX I/O.',
-      'Constructed an in-memory directory tree and validated the library against 35 automated tests.',
-    ],
-    tech: ['C++', 'FUSE', 'Linux', 'POSIX I/O', 'Data Structures'],
-    links: [],
-    visual: <WadVisual />,
-  },
-]
-
-const additionalProjects = [
-  {
-    title: 'Minesweeper',
-    kicker: 'C++ · Desktop',
-    description: 'A graphical Minesweeper implementation with randomized boards, recursive zero-tile revealing, flags, win/loss handling, test boards, and debug tooling.',
-    tech: ['C++', 'SFML', 'Recursion', 'File I/O'],
-    visual: <MinesweeperVisual />,
-  },
-  {
-    title: 'Sudoku',
-    kicker: 'Python · Algorithms',
-    description: 'An interactive Sudoku application built with Python and Pygame, including multiple difficulty levels and algorithmic generation of solvable grids.',
-    tech: ['Python', 'Pygame', 'Algorithms'],
-    visual: <SudokuVisual />,
   },
 ]
 
@@ -157,14 +141,9 @@ export default function App() {
       </section>
 
       <section className="section" id="work">
-        <SectionHeading eyebrow="01 / Selected work" title="Projects with range." copy="Full-stack product work, collaborative engineering, and systems programming — selected to show different sides of how I build." />
+        <SectionHeading eyebrow="01 / Selected work" title="Projects with range." copy="Full-stack product work, client collaboration, and technical leadership — selected to show different sides of how I build." />
         <div className="featured-projects">
           {featuredProjects.map((p, i) => <ProjectCard key={p.title} index={i+1} {...p} />)}
-        </div>
-
-        <div className="more-work-header"><h3>Additional projects</h3><p>Earlier work that still demonstrates useful fundamentals.</p></div>
-        <div className="additional-grid">
-          {additionalProjects.map((p, i) => <ProjectCard key={p.title} index={i+4} {...p} featured={false} />)}
         </div>
       </section>
 
@@ -227,11 +206,16 @@ export default function App() {
             <div><span className="timeline-type">Education</span><h3>University of Florida</h3><p className="timeline-subtitle">B.S. Computer Science · Expected May 2028 · GPA 3.59</p><div className="coursework"><span>Data Structures & Algorithms</span><span>Operating Systems</span><span>Computer Organization</span><span>Introduction to Software Engineering</span><span>Discrete Structures</span></div></div>
           </article>
           <article className="timeline-card">
-            <div className="timeline-date">Aug 2026 — Present</div>
-            <div><span className="timeline-type">Experience</span><h3>Senior Developer</h3><p className="timeline-subtitle">UF Software Engineering Club · Software Development</p><p>Contribute to technical planning, implementation, and engineering decisions
-      across a collaborative development team. Review code, troubleshoot technical
-      issues, and provide guidance to teammates to help resolve blockers and keep
-      development moving.</p></div>
+            <div className="timeline-date">August 2026 — Present</div>
+            <div>
+              <span className="timeline-type">Experience</span>
+              <h3>Senior Developer</h3>
+              <p className="timeline-subtitle">UF Software Engineering Club</p>
+              <ul className="experience-bullets">
+                <li>Developed an administrative content-management system with role-based access control, enabling club leadership to manage website content without modifying source code.</li>
+                <li>Refactored hardcoded website content into database-backed models and CRUD workflows, collaborating with club leadership to define requirements and improve maintainability.</li>
+              </ul>
+            </div>
           </article>
         </div>
       </section>
