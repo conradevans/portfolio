@@ -10,9 +10,8 @@ const featuredProjects = [
     kicker: 'Client · Full-Stack',
     description: 'A production e-commerce platform built for a client, covering the full path from business requirements to deployed software.',
     bullets: [
-      'Built product browsing, search, favorites, cart management, user accounts, and authentication.',
-      'Engineered REST endpoints and MongoDB data models with JWT authentication and password hashing.',
-      'Deployed the React frontend on Vercel and the Node/Express backend on Render.',
+      'Developed and deployed a production e-commerce application for a client, translating business requirements into product browsing, search, favorites, cart, account, and authentication workflows.',
+      'Engineered REST APIs and MongoDB data models for products and user accounts, implementing JWT authentication, password hashing, and persistent user functionality across the application.',
     ],
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render'],
     links: [
@@ -44,7 +43,7 @@ const featuredProjects = [
       'Implemented a FUSE-based userspace file system in C++ that mounts WAD archives and exposes their contents through standard file and directory operations.',
       'Engineered low-level file parsing and modification logic to manage directory structures, file metadata, offsets, and persistent updates to the underlying WAD archive.',
     ],
-    tech: ['C++', 'Linux', 'FUSE', 'POSIX I/O', 'Binary File Parsing'],
+    tech: ['C++', 'Linux', 'FUSE', 'POSIX File I/O'],
     links: [
       { label: 'GitHub', href: 'https://github.com/conradevans/WAD-File-System.git', github: true },
     ],
@@ -55,7 +54,7 @@ const featuredProjects = [
 const skillGroups = [
   { label: 'Languages', values: ['C++', 'Python', 'JavaScript', 'TypeScript', 'RISC-V Assembly'] },
   { label: 'Application', values: ['React', 'Node.js', 'Express', 'Django', 'Tailwind CSS'] },
-  { label: 'Systems & Tools', values: ['Linux', 'Git', 'GitHub', 'MongoDB', 'Jira'] },
+  { label: 'Systems & Tools', values: ['Linux', 'Git', 'GitHub', 'MongoDB'] },
 ]
 
 function SectionHeading({ eyebrow, title, copy }) {
