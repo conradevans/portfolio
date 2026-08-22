@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import ProjectCard from './components/ProjectCard.jsx'
-import { GolfVisual, HiberVisual, MySchedulerVisual } from './components/ProjectVisuals.jsx'
+import { GolfVisual, MySchedulerVisual, WadVisual } from './components/ProjectVisuals.jsx'
 import { ArrowUpRight, GithubIcon, LinkedinIcon, MailIcon, MenuIcon, MoonIcon, SunIcon } from './components/Icons.jsx'
 import profilePhoto from './images/profile-photo.jpg'
 
@@ -37,19 +37,18 @@ const featuredProjects = [
     visual: <MySchedulerVisual />,
   },
   {
-    title: 'HiberGator',
-    kicker: 'Team · Technical Leadership',
-    description: 'A team-built sleep management application where I led technical development and helped coordinate implementation across the stack.',
+    title: 'WAD File System',
+    kicker: 'Systems · C++',
+    description: 'A C++ userspace filesystem that mounts WAD archives as a standard hierarchical filesystem through FUSE on Linux.',
     bullets: [
-      'Coordinated integration across frontend, backend, and database components.',
-      'Diagnosed implementation and integration issues across teammates’ code.',
-      'Provided technical guidance and debugging support to keep development moving.',
+      'Implemented a FUSE-based userspace file system in C++ that mounts WAD archives and exposes their contents through standard file and directory operations.',
+      'Engineered low-level file parsing and modification logic to manage directory structures, file metadata, offsets, and persistent updates to the underlying WAD archive.',
     ],
-    tech: ['React', 'Python', 'Django', 'MongoDB'],
+    tech: ['C++', 'Linux', 'FUSE', 'POSIX I/O', 'Binary File Parsing'],
     links: [
-      { label: 'GitHub', href: 'https://github.com/OliverG776/HiberGator', github: true },
+      { label: 'GitHub', href: 'https://github.com/conradevans/WAD-File-System.git', github: true },
     ],
-    visual: <HiberVisual />,
+    visual: <WadVisual />,
   },
 ]
 
@@ -141,7 +140,7 @@ export default function App() {
       </section>
 
       <section className="section" id="work">
-        <SectionHeading eyebrow="01 / Selected work" title="Projects with range." copy="Full-stack product work, client collaboration, and technical leadership — selected to show different sides of how I build." />
+        <SectionHeading eyebrow="01 / Selected work" title="Projects with range." copy="Full-stack product work, client collaboration, and systems programming — selected to show different sides of how I build." />
         <div className="featured-projects">
           {featuredProjects.map((p, i) => <ProjectCard key={p.title} index={i+1} {...p} />)}
         </div>
