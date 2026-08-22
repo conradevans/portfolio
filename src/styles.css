@@ -122,11 +122,11 @@ main { overflow: hidden; }
 .project-links { display:flex; flex-wrap:wrap; gap:18px; margin-top:28px; }
 .project-links a { display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:700; }
 .project-links a:hover { color:var(--accent); }
-.project-visual:has(.project-screenshot) { padding:clamp(18px,2.5vw,34px); }
+.project-visual:has(.project-screenshot), .project-visual:has(.terminal-preview) { padding:clamp(18px,2.5vw,34px); }
 .project-screenshot { margin:0; width:min(100%,760px); border:1px solid var(--line-strong); border-radius:14px; background:#fff; box-shadow:0 22px 45px rgba(0,0,0,.22); overflow:hidden; }
 .project-screenshot img { display:block; width:100%; height:auto; }
 
-.terminal-preview { width:min(100%,680px); aspect-ratio:1.35; border:1px solid var(--line-strong); border-radius:14px; background:#080b0d; box-shadow:0 22px 45px rgba(0,0,0,.25); overflow:hidden; color:#d9e1e8; display:flex; flex-direction:column; }
+.terminal-preview { width:min(100%,760px); aspect-ratio:1.24; border:1px solid var(--line-strong); border-radius:14px; background:#080b0d; box-shadow:0 22px 45px rgba(0,0,0,.25); overflow:hidden; color:#d9e1e8; display:flex; flex-direction:column; }
 .terminal-bar { height:44px; flex:0 0 44px; border-bottom:1px solid rgba(255,255,255,.09); background:#10151a; display:flex; align-items:center; gap:7px; padding:0 14px; color:#83909c; }
 .terminal-bar span { width:8px; height:8px; border-radius:50%; background:#3a434c; }
 .terminal-bar em { font-style:normal; font-size:11px; margin-left:8px; }
@@ -196,7 +196,6 @@ footer { max-width:1320px; margin:auto; padding:24px clamp(20px,4vw,64px) 42px; 
   .project-copy { padding:28px 22px; }
   .project-bullets { display:none; }
   .code-body { padding:26px 22px; min-height:280px; }
-  .terminal-preview { aspect-ratio:1.18; }
   .contact-section { padding:95px 18px; }
   footer { padding:22px 18px 34px; }
 }
