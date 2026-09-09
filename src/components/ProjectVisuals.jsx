@@ -1,5 +1,6 @@
 import golfMulletScreenshot from '../images/golf-mullet-homepage.png'
 import mySchedulerScreenshot from '../images/myscheduler-dashboard.png'
+import reactorLabScreenshot from '../images/reactorlab-overview.png'
 
 function ProjectScreenshot({ src, alt, className }) {
   return <figure className={`project-screenshot ${className}`}>
@@ -23,9 +24,10 @@ export function MySchedulerVisual() {
   />
 }
 
-export function WadVisual() {
-  return <div className="terminal-preview" role="img" aria-label="Terminal showing a mounted WAD archive as a directory tree">
-    <div className="terminal-bar"><span/><span/><span/><em>wadfs — ~/archives</em></div>
-    <pre><span className="prompt">$</span> ./wadfs sample.wad ./mnt{`\n`}<span className="success">mounted sample.wad at ./mnt</span>{`\n\n`}<span className="prompt">$</span> tree ./mnt{`\n`}<span className="tree">./mnt{`\n`}├── maps{`\n`}│   └── map01{`\n`}│       ├── things{`\n`}│       ├── linedefs{`\n`}│       └── vertexes{`\n`}├── textures{`\n`}└── sprites</span></pre>
-  </div>
+export function ReactorLabVisual() {
+  return <ProjectScreenshot
+    src={reactorLabScreenshot}
+    alt="ReactorLab infrastructure overview showing live server health, resource usage, and active services"
+    className="reactorlab-screenshot"
+  />
 }

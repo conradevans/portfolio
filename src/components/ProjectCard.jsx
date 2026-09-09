@@ -1,10 +1,10 @@
 import { ArrowUpRight, GithubIcon } from './Icons.jsx'
 
-export default function ProjectCard({ index, title, kicker, description, bullets = [], tech, links = [], visual }) {
+export default function ProjectCard({ index, title, kicker, date, description, bullets = [], tech, links = [], visual }) {
   return <article className="project-card featured-project">
     <div className="project-visual">{visual}</div>
     <div className="project-copy">
-      <div className="project-topline"><span>{String(index).padStart(2,'0')}</span><span>{kicker}</span></div>
+      <div className="project-topline"><span>{String(index).padStart(2,'0')} · {kicker}</span>{date && <time>{date}</time>}</div>
       <h3>{title}</h3>
       <p>{description}</p>
       {bullets.length > 0 && <ul className="project-bullets">{bullets.map((b,i)=><li key={i}>{b}</li>)}</ul>}

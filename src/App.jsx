@@ -1,28 +1,31 @@
 import { useEffect, useState } from 'react'
 import ProjectCard from './components/ProjectCard.jsx'
-import { GolfVisual, MySchedulerVisual, WadVisual } from './components/ProjectVisuals.jsx'
+import { GolfVisual, MySchedulerVisual, ReactorLabVisual } from './components/ProjectVisuals.jsx'
 import { ArrowUpRight, GithubIcon, LinkedinIcon, MailIcon, MenuIcon, MoonIcon, SunIcon } from './components/Icons.jsx'
 import profilePhoto from './images/profile-photo.jpg'
 
 const featuredProjects = [
   {
-    title: 'Golf Mullet',
-    kicker: 'Client · Full-Stack',
-    description: 'A production e-commerce platform built for a client, covering the full path from business requirements to deployed software.',
+    title: 'ReactorLab',
+    kicker: 'Self-Hosted Developer Cloud',
+    date: 'August 2026 — Present',
+    description: 'A self-hosted developer cloud for deploying applications, provisioning PostgreSQL databases, and running local AI tooling.',
     bullets: [
-      'Developed and deployed a production e-commerce application for a client, translating business requirements into product browsing, search, favorites, cart, account, and authentication workflows.',
-      'Engineered REST APIs and MongoDB data models for products and user accounts, implementing JWT authentication, password hashing, and persistent user functionality across the application.',
+      'Built ReactorLab with MiniDeploy for application deployment, MiniBase for PostgreSQL provisioning, and MiniAI for local infrastructure diagnostics and troubleshooting.',
+      'Operate 6 deployments across 8 Docker containers and 2 PostgreSQL databases on an Ubuntu server with health monitoring, deployment history, and centralized service management.',
+      'Secured public and administrative services with Cloudflare Access, loopback-only origins, firewall rules, and server-side access controls.',
     ],
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render'],
+    tech: ['Go', 'Docker', 'PostgreSQL', 'Ollama', 'Cloudflare', 'Linux'],
     links: [
-      { label: 'Live site', href: 'https://golfmullet-frontend.vercel.app/' },
-      { label: 'GitHub', href: 'https://github.com/conradevans/GolfMullet.git', github: true },
+      { label: 'Live site', href: 'https://reactorlab.dev/' },
+      { label: 'GitHub', href: 'https://github.com/conradevans/ReactorLab', github: true },
     ],
-    visual: <GolfVisual />,
+    visual: <ReactorLabVisual />,
   },
   {
     title: 'MyScheduler',
     kicker: 'Client · Full-Stack',
+    date: 'August 2026',
     description: 'A full-stack workforce scheduling application that generates employee shifts from availability, staffing requirements, role qualifications, and weekly hour limits.',
     bullets: [
       'Developed a full-stack workforce scheduling application for a client that generates employee shifts based on availability, staffing requirements, role qualifications, and weekly hour limits.',
@@ -30,31 +33,33 @@ const featuredProjects = [
     ],
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render'],
     links: [
-      { label: 'Live site', href: 'https://myscheduler-1av7.onrender.com/login' },
+      { label: 'Live site', href: 'https://myscheduler.reactorlab.dev/' },
       { label: 'GitHub', href: 'https://github.com/conradevans/MyScheduler.git', github: true },
     ],
     visual: <MySchedulerVisual />,
   },
   {
-    title: 'WAD File System',
-    kicker: 'Systems · C++',
-    description: 'A C++ userspace filesystem that mounts WAD archives as a standard hierarchical filesystem through FUSE on Linux.',
+    title: 'Golf Mullet',
+    kicker: 'Client · Full-Stack',
+    date: 'January 2025 — August 2026',
+    description: 'A production e-commerce platform built for a client, covering the full path from business requirements to deployed software.',
     bullets: [
-      'Implemented a FUSE-based userspace file system in C++ that mounts WAD archives and exposes their contents through standard file and directory operations.',
-      'Engineered low-level file parsing and modification logic to manage directory structures, file metadata, offsets, and persistent updates to the underlying WAD archive.',
+      'Developed and deployed a production e-commerce application for a client, translating business requirements into product browsing, search, favorites, cart, account, and authentication workflows.',
+      'Engineered REST APIs and MongoDB data models for products and user accounts, implementing JWT authentication, password hashing, and persistent user functionality across the application.',
     ],
-    tech: ['C++', 'Linux', 'FUSE', 'POSIX File I/O'],
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render'],
     links: [
-      { label: 'GitHub', href: 'https://github.com/conradevans/WAD-File-System.git', github: true },
+      { label: 'Live site', href: 'https://golfmullet.reactorlab.dev/' },
+      { label: 'GitHub', href: 'https://github.com/conradevans/GolfMullet.git', github: true },
     ],
-    visual: <WadVisual />,
+    visual: <GolfVisual />,
   },
 ]
 
 const skillGroups = [
-  { label: 'Languages', values: ['C++', 'Python', 'JavaScript', 'TypeScript', 'RISC-V Assembly'] },
-  { label: 'Application', values: ['React', 'Node.js', 'Express', 'Django', 'Tailwind CSS'] },
-  { label: 'Systems & Tools', values: ['Linux', 'Git', 'GitHub', 'MongoDB'] },
+  { label: 'Languages', values: ['Go', 'Python', 'C++', 'JavaScript', 'TypeScript', 'SQL'] },
+  { label: 'Frameworks & Libraries', values: ['React', 'Node.js', 'Express', 'Django', 'Tailwind CSS'] },
+  { label: 'Technologies', values: ['PostgreSQL', 'MongoDB', 'Docker', 'Git', 'GitHub', 'Linux', 'Cloudflare', 'Ollama'] },
 ]
 
 function SectionHeading({ eyebrow, title, copy }) {
@@ -86,7 +91,7 @@ export default function App() {
         <a href="#about" onClick={closeMenu}>About</a>
         <a href="#experience" onClick={closeMenu}>Experience</a>
         <a href="#contact" onClick={closeMenu}>Contact</a>
-        <a className="nav-resume" href="./Conrad-Evans-Resume.pdf" target="_blank" rel="noreferrer">Resume <ArrowUpRight size={15}/></a>
+        <a className="nav-resume" href="./Conrad-Evans-Resume-2026.pdf" target="_blank" rel="noreferrer">Resume <ArrowUpRight size={15}/></a>
       </nav>
       <div className="header-actions">
         <button className="icon-button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`} title="Toggle theme">{theme === 'dark' ? <SunIcon/> : <MoonIcon/>}</button>
@@ -108,7 +113,7 @@ export default function App() {
           <div className="hero-socials">
             <a href="https://github.com/conradevans" target="_blank" rel="noreferrer"><GithubIcon/>GitHub</a>
             <a href="https://www.linkedin.com/in/conradbevans/" target="_blank" rel="noreferrer"><LinkedinIcon/>LinkedIn</a>
-            <a href="./Conrad-Evans-Resume.pdf" target="_blank" rel="noreferrer">Resume<ArrowUpRight size={16}/></a>
+            <a href="./Conrad-Evans-Resume-2026.pdf" target="_blank" rel="noreferrer">Resume<ArrowUpRight size={16}/></a>
           </div>
         </div>
         <div className="hero-panel" aria-label="Current profile information">
@@ -201,7 +206,7 @@ export default function App() {
         <div className="timeline-grid">
           <article className="timeline-card education-card">
             <div className="timeline-date">2024 — 2028</div>
-            <div><span className="timeline-type">Education</span><h3>University of Florida</h3><p className="timeline-subtitle">B.S. Computer Science · Expected May 2028 · GPA 3.59</p><div className="coursework"><span>Data Structures & Algorithms</span><span>Operating Systems</span><span>Computer Organization</span><span>Introduction to Software Engineering</span><span>Discrete Structures</span></div></div>
+            <div><span className="timeline-type">Education</span><h3>University of Florida</h3><p className="timeline-subtitle">B.S. Computer Science · Expected May 2028 · GPA 3.59</p><div className="coursework"><span>Data Structures & Algorithms</span><span>Computer Organization</span><span>Operating Systems</span><span>Discrete Structures</span></div></div>
           </article>
           <article className="timeline-card">
             <div className="timeline-date">August 2026 — Present</div>
@@ -228,7 +233,7 @@ export default function App() {
           <a href="mailto:conradbevans01@gmail.com"><span><MailIcon/>Email</span><ArrowUpRight/></a>
           <a href="https://github.com/conradevans" target="_blank" rel="noreferrer"><span><GithubIcon/>GitHub</span><ArrowUpRight/></a>
           <a href="https://www.linkedin.com/in/conradbevans/" target="_blank" rel="noreferrer"><span><LinkedinIcon/>LinkedIn</span><ArrowUpRight/></a>
-          <a href="./Conrad-Evans-Resume.pdf" target="_blank" rel="noreferrer"><span>Resume</span><ArrowUpRight/></a>
+          <a href="./Conrad-Evans-Resume-2026.pdf" target="_blank" rel="noreferrer"><span>Resume</span><ArrowUpRight/></a>
         </div>
       </section>
     </main>
