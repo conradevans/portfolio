@@ -204,12 +204,8 @@ export default function App() {
 </section>
 
       <section className="section" id="experience">
-        <SectionHeading eyebrow="03 / Experience & education" title="The foundation." copy="A concise view of where I’ve studied, worked, and built the technical base behind the projects above." />
+        <SectionHeading eyebrow="03 / Experience" title="The foundation." copy="A concise view of where I’ve studied, worked, and built the technical base behind the projects above." />
         <div className="experience-layout">
-          <article className="timeline-card education-card">
-            <div className="timeline-date">2024 — 2028</div>
-            <div><span className="timeline-type">Education</span><h3>University of Florida</h3><p className="timeline-subtitle">B.S. Computer Science · Expected May 2028 · GPA 3.59</p><div className="coursework"><span>Data Structures & Algorithms</span><span>Computer Organization</span><span>Operating Systems</span><span>Discrete Structures</span></div></div>
-          </article>
           <div className="experience-panel">
             <span className="timeline-type">Experience</span>
             <div className="experience-timeline">
