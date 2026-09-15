@@ -210,7 +210,7 @@ export default function App() {
             <div className="timeline-date">2024 — 2028</div>
             <div><span className="timeline-type">Education</span><h3>University of Florida</h3><p className="timeline-subtitle">B.S. Computer Science · Expected May 2028 · GPA 3.59</p><div className="coursework"><span>Data Structures & Algorithms</span><span>Computer Organization</span><span>Operating Systems</span><span>Discrete Structures</span></div></div>
           </article>
-          <div className="experience-panel">
+          <div className="timeline-card experience-panel">
             <span className="timeline-type">Experience</span>
             <div className="experience-timeline">
               <article className="experience-entry">
