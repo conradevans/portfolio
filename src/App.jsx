@@ -11,9 +11,9 @@ const featuredProjects = [
     date: 'August 2026 — Present',
     description: 'A self-hosted developer cloud for deploying applications, provisioning PostgreSQL databases, and running local AI tooling.',
     bullets: [
-      'Built ReactorLab with MiniDeploy for application deployment, MiniBase for PostgreSQL provisioning, and MiniAI for local infrastructure diagnostics and troubleshooting.',
-      'Operate 6 deployments across 8 Docker containers and 2 PostgreSQL databases on an Ubuntu server with health monitoring, deployment history, and centralized service management.',
-      'Secured public and administrative services with Cloudflare Access, loopback-only origins, firewall rules, and server-side access controls.',
+      'Built a self-hosted private cloud on an Ubuntu server that brings application deployment, database management, infrastructure monitoring, and AI-assisted diagnostics into one platform.',
+      'Developed services in Go and Docker, using Cloudflare for secure public access and PostgreSQL-backed infrastructure to host and manage real applications.',
+      'Built MiniAI to inspect deployment logs, service health, database status, and hardware metrics, allowing common infrastructure problems to be diagnosed without relying entirely on the local LLM.',
     ],
     tech: ['Go', 'Docker', 'PostgreSQL', 'Ollama', 'Cloudflare', 'Linux'],
     links: [
@@ -28,8 +28,9 @@ const featuredProjects = [
     date: 'August 2026',
     description: 'A full-stack workforce scheduling application that generates employee shifts from availability, staffing requirements, role qualifications, and weekly hour limits.',
     bullets: [
-      'Developed a full-stack workforce scheduling application for a client that generates employee shifts based on availability, staffing requirements, role qualifications, and weekly hour limits.',
-      'Engineered constraint-aware scheduling logic to prevent split shifts and scheduling conflicts, preserve role-qualified employees, and balance employee workloads.',
+      'Built a workforce scheduling application that automatically generates schedules based on employee availability, operating hours, staffing requirements, and worker roles.',
+      'Designed scheduling logic to prevent overlapping shifts, distribute hours fairly, and account for temporary unavailability while maintaining practical, contiguous shifts.',
+      'Created an interactive calendar interface with worker management, event editing, drag-and-drop scheduling, and flexible start times and shift durations.',
     ],
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render'],
     links: [
@@ -44,8 +45,9 @@ const featuredProjects = [
     date: 'January 2025 — August 2026',
     description: 'A production e-commerce platform built for a client, covering the full path from business requirements to deployed software.',
     bullets: [
-      'Developed and deployed a production e-commerce application for a client, translating business requirements into product browsing, search, favorites, cart, account, and authentication workflows.',
-      'Engineered REST APIs and MongoDB data models for products and user accounts, implementing JWT authentication, password hashing, and persistent user functionality across the application.',
+      'Built and deployed a full-stack e-commerce platform with product browsing, search, favorites, shopping cart functionality, user accounts, and secure authentication.',
+      'Rebuilt the original HTML, CSS, and JavaScript frontend in React to create a more dynamic interface and improve the overall user experience.',
+      'Developed the backend with Node.js, Express, and MongoDB, including JWT authentication and password hashing, and deployed the application using Vercel and Render.',
     ],
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render'],
     links: [
@@ -209,14 +211,28 @@ export default function App() {
             <div><span className="timeline-type">Education</span><h3>University of Florida</h3><p className="timeline-subtitle">B.S. Computer Science · Expected May 2028 · GPA 3.59</p><div className="coursework"><span>Data Structures & Algorithms</span><span>Computer Organization</span><span>Operating Systems</span><span>Discrete Structures</span></div></div>
           </article>
           <article className="timeline-card">
+            <div className="timeline-date">September 2026 — Present</div>
+            <div>
+              <span className="timeline-type">Experience</span>
+              <h3>Software Developer</h3>
+              <p className="timeline-subtitle">Kaizen</p>
+              <ul className="experience-bullets">
+                <li>Contribute to a professor-led, Canvas-integrated AI grading platform used by more than 500 students to evaluate coursework and provide automated feedback.</li>
+                <li>Investigated grading inconsistencies in short-answer responses by tracing behavior across the rubric, model instructions, and response examples to identify sensitivity to different writing styles.</li>
+                <li>Helped improve grading consistency by adjusting evaluation behavior and expanding the variety of response examples the system could use when judging correct answers.</li>
+              </ul>
+            </div>
+          </article>
+          <article className="timeline-card">
             <div className="timeline-date">August 2026 — Present</div>
             <div>
               <span className="timeline-type">Experience</span>
               <h3>Senior Developer</h3>
               <p className="timeline-subtitle">UF Software Engineering Club</p>
               <ul className="experience-bullets">
-                <li>Developed an administrative content-management system with role-based access control, enabling club leadership to manage website content without modifying source code.</li>
-                <li>Refactored hardcoded website content into database-backed models and CRUD workflows, collaborating with club leadership to define requirements and improve maintainability.</li>
+                <li>Contribute to the development and maintenance of the Software Engineering Club's website and internal tooling used to support the organization.</li>
+                <li>Work on reducing hard-coded site content by moving toward more maintainable, dynamically managed data and administrative functionality.</li>
+                <li>Collaborate with other developers on technical decisions, implementation, debugging, and improvements to the club's software.</li>
               </ul>
             </div>
           </article>
