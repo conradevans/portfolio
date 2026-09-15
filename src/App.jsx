@@ -32,7 +32,7 @@ const featuredProjects = [
       'Designed scheduling logic to prevent overlapping shifts, distribute hours fairly, and account for temporary unavailability while maintaining practical, contiguous shifts.',
       'Created an interactive calendar interface with worker management, event editing, drag-and-drop scheduling, and flexible start times and shift durations.',
     ],
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render'],
+    tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Prisma'],
     links: [
       { label: 'Live site', href: 'https://myscheduler.reactorlab.dev/' },
       { label: 'GitHub', href: 'https://github.com/conradevans/MyScheduler.git', github: true },
@@ -47,9 +47,9 @@ const featuredProjects = [
     bullets: [
       'Built and deployed a full-stack e-commerce platform with product browsing, search, favorites, shopping cart functionality, user accounts, and secure authentication.',
       'Rebuilt the original HTML, CSS, and JavaScript frontend in React to create a more dynamic interface and improve the overall user experience.',
-      'Developed the backend with Node.js, Express, and MongoDB, including JWT authentication and password hashing, and deployed the application using Vercel and Render.',
+      'Developed the backend with Node.js, Express, and MongoDB, including JWT authentication and password hashing.',
     ],
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render'],
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
     links: [
       { label: 'Live site', href: 'https://golfmullet.reactorlab.dev/' },
       { label: 'GitHub', href: 'https://github.com/conradevans/GolfMullet.git', github: true },
@@ -205,37 +205,42 @@ export default function App() {
 
       <section className="section" id="experience">
         <SectionHeading eyebrow="03 / Experience & education" title="The foundation." copy="A concise view of where I’ve studied, worked, and built the technical base behind the projects above." />
-        <div className="timeline-grid">
+        <div className="experience-layout">
           <article className="timeline-card education-card">
             <div className="timeline-date">2024 — 2028</div>
             <div><span className="timeline-type">Education</span><h3>University of Florida</h3><p className="timeline-subtitle">B.S. Computer Science · Expected May 2028 · GPA 3.59</p><div className="coursework"><span>Data Structures & Algorithms</span><span>Computer Organization</span><span>Operating Systems</span><span>Discrete Structures</span></div></div>
           </article>
-          <article className="timeline-card">
-            <div className="timeline-date">September 2026 — Present</div>
-            <div>
-              <span className="timeline-type">Experience</span>
-              <h3>Software Developer</h3>
-              <p className="timeline-subtitle">Kaizen</p>
-              <ul className="experience-bullets">
-                <li>Contribute to a professor-led, Canvas-integrated AI grading platform used by more than 500 students to evaluate coursework and provide automated feedback.</li>
-                <li>Investigated grading inconsistencies in short-answer responses by tracing behavior across the rubric, model instructions, and response examples to identify sensitivity to different writing styles.</li>
-                <li>Helped improve grading consistency by adjusting evaluation behavior and expanding the variety of response examples the system could use when judging correct answers.</li>
-              </ul>
+          <div className="experience-panel">
+            <span className="timeline-type">Experience</span>
+            <div className="experience-timeline">
+              <article className="experience-entry">
+                <div className="experience-marker" aria-hidden="true" />
+                <div className="experience-content">
+                  <div className="timeline-date">September 2026 — Present</div>
+                  <h3>Software Developer</h3>
+                  <p className="timeline-subtitle">Kaizen</p>
+                  <ul className="experience-bullets">
+                    <li>Contribute to a professor-led, Canvas-integrated AI grading platform used by more than 500 students across university courses.</li>
+                    <li>Investigated grading inconsistencies in short-answer responses by tracing behavior across the rubric, model instructions, and response examples.</li>
+                    <li>Helped improve grading consistency by adjusting evaluation behavior and expanding the variety of response examples used when judging correct answers.</li>
+                  </ul>
+                </div>
+              </article>
+              <article className="experience-entry">
+                <div className="experience-marker" aria-hidden="true" />
+                <div className="experience-content">
+                  <div className="timeline-date">August 2026 — Present</div>
+                  <h3>Senior Developer</h3>
+                  <p className="timeline-subtitle">UF Software Engineering Club</p>
+                  <ul className="experience-bullets">
+                    <li>Contribute to the development and maintenance of the Software Engineering Club’s website and internal tooling.</li>
+                    <li>Helped design the club’s role and permissions hierarchy across members, junior developers, senior developers, executive board members, and advisory board members.</li>
+                    <li>Worked on membership and attendance workflows that allow participation to automatically update member status while keeping privileged roles controlled by leadership.</li>
+                  </ul>
+                </div>
+              </article>
             </div>
-          </article>
-          <article className="timeline-card">
-            <div className="timeline-date">August 2026 — Present</div>
-            <div>
-              <span className="timeline-type">Experience</span>
-              <h3>Senior Developer</h3>
-              <p className="timeline-subtitle">UF Software Engineering Club</p>
-              <ul className="experience-bullets">
-                <li>Contribute to the development and maintenance of the Software Engineering Club's website and internal tooling used to support the organization.</li>
-                <li>Work on reducing hard-coded site content by moving toward more maintainable, dynamically managed data and administrative functionality.</li>
-                <li>Collaborate with other developers on technical decisions, implementation, debugging, and improvements to the club's software.</li>
-              </ul>
-            </div>
-          </article>
+          </div>
         </div>
       </section>
 
