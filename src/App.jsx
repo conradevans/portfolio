@@ -207,7 +207,6 @@ export default function App() {
         <SectionHeading eyebrow="03 / Experience" title="The foundation." copy="A concise view of where I’ve studied, worked, and built the technical base behind the projects above." />
         <div className="experience-layout">
           <div className="experience-panel">
-            <span className="timeline-type">Experience</span>
             <div className="experience-timeline">
               <article className="timeline-card experience-card">
                 <div className="experience-entry">
